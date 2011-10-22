@@ -1,0 +1,10 @@
+The health check module is to be a generic way to look for problems within
+a business information.  The health checks should be able to designed in
+a web interface and stored in the database.  Health checks should be able
+to run from cron or as required during import/export of data.
+
+Health checks should provide the ability to spot problems or data corruption
+issues before they become a problem.
+
+Health checks should provide the ability to compare and warn if data does not
+match certain parameters.

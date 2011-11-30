@@ -1,0 +1,28 @@
+#
+# Description
+# -----------
+# This table stores the health check logs.
+#
+# Fields
+# ------
+# id:				The thread ID.
+# business_id:		The business the thread is for.
+# ref_uid:			The uid reference ID of the health check performed
+# severity:			The severity result of the check.
+# user_id:			The user who created the bug.
+# subject:			The subject of the health check.
+# date_added:		The date and time the thread was added.
+# last_updated:		The date and time the thread was last updated.
+#
+create table ciniki_healthcheck_logs (
+	id int not null auto_increment,
+	business_id int not null,
+	ref_uid varchar(255) not null,
+	severity tinyint not null,
+	user_id int not null,
+	subject varchar(140) not null,
+	date_added datetime not null,
+	last_updated datetime not null,
+	primary key (id),
+	index (business_id, user_id, ref_uid)
+) ENGINE='InnoDB', COMMENT='v1.01';
